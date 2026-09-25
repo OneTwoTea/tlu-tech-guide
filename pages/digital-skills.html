@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kỹ năng số cho sinh viên: mật khẩu, 2FA, phishing, sao lưu dữ liệu | TLU Tech Guide</title>
+  <meta name="description" content="Hướng dẫn bảo vệ tài khoản sinh viên: tạo mật khẩu mạnh, xác thực hai yếu tố, nhận biết phishing và sao lưu dữ liệu học tập an toàn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Kỹ năng số cho sinh viên: mật khẩu, 2FA, phishing, sao lưu dữ liệu",
+        "description": "Hướng dẫn bảo vệ tài khoản sinh viên: tạo mật khẩu mạnh, xác thực hai yếu tố, nhận biết phishing và sao lưu dữ liệu học tập an toàn.",
+        "inLanguage": "vi",
+        "url": "https://tlu-tech-guide.example/pages/digital-skills.html",
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "author": { "@type": "Organization", "name": "Ban biên tập TLU Tech Guide" },
+        "publisher": { "@type": "Organization", "name": "TLU Tech Guide" },
+        "mainEntityOfPage": "https://tlu-tech-guide.example/pages/digital-skills.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://tlu-tech-guide.example/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Kỹ năng số", "item": "https://tlu-tech-guide.example/pages/digital-skills.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Làm sao bảo vệ tài khoản sinh viên?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Dùng mật khẩu mạnh, bật xác thực hai yếu tố nếu hệ thống hỗ trợ, và cảnh giác với email/link lạ." }
+          },
+          {
+            "@type": "Question",
+            "name": "Làm sao sao lưu tài liệu học tập?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Lưu trữ trên dịch vụ đám mây như Google Drive, sắp xếp theo thư mục rõ ràng và sao lưu định kỳ." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="#1D5FD6"/>
+            <path d="M8 20 L16 10 L24 20" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="23" r="1.6" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>TLU Tech Guide</strong>
+          <small>Cẩm nang Công nghệ &amp; Kỹ năng số</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Menu chính">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html">Học tập số</a></li>
+          <li><a href="/pages/ai.html">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html" aria-current="page">Kỹ năng số</a></li>
+          <li><a href="/pages/services.html">Dịch vụ số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Mở tìm kiếm" aria-expanded="false" aria-controls="searchPanel">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel" hidden>
+      <label for="panelSearchInput" class="sr-only">Tìm kiếm hướng dẫn</label>
+      <input type="search" id="panelSearchInput" placeholder="Tìm hướng dẫn... ví dụ: mật khẩu">
+      <div class="search-results" id="panelSearchResults" hidden></div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="container breadcrumb-bar">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/index.html">Trang chủ</a><span>/</span>
+        <span aria-current="page">Kỹ năng số</span>
+      </nav>
+    </div>
+
+    <article class="article">
+      <div class="container container-narrow">
+        <p class="article-category">Kỹ năng số</p>
+        <h1>Kỹ năng số cho sinh viên: mật khẩu, 2FA, phishing, sao lưu dữ liệu</h1>
+        <p class="article-meta">Cập nhật: 24/09/2026 · Người phụ trách nội dung: Ban biên tập TLU Tech Guide</p>
+
+        <div class="callout quick-answer">
+          <strong>Trả lời nhanh:</strong> Để bảo vệ tài khoản sinh viên, cần đặt mật khẩu mạnh, bật xác thực hai yếu tố, cảnh giác với email phishing và sao lưu dữ liệu học tập thường xuyên.
+        </div>
+
+        <h2 id="mat-khau-manh">Cách tạo mật khẩu mạnh</h2>
+        <p><strong>Vấn đề:</strong> mật khẩu yếu, dễ đoán khiến tài khoản dễ bị chiếm đoạt.</p>
+        <p><strong>Nguyên nhân:</strong> dùng mật khẩu ngắn, thông tin cá nhân (ngày sinh, tên) hoặc dùng chung 1 mật khẩu cho nhiều tài khoản.</p>
+        <p><strong>Cách nhận biết:</strong> mật khẩu dưới 8 ký tự, không có chữ hoa/số/ký tự đặc biệt là mật khẩu yếu.</p>
+        <p><strong>Cách xử lý:</strong></p>
+        <ul>
+          <li>Dùng mật khẩu dài (tối thiểu 8–12 ký tự), kết hợp chữ hoa, chữ thường, số và ký tự đặc biệt</li>
+          <li>Không dùng chung một mật khẩu cho nhiều tài khoản quan trọng</li>
+          <li>Đổi mật khẩu ngay nếu nghi ngờ bị lộ</li>
+        </ul>
+        <div class="callout note">💡 Mẹo: có thể dùng một cụm từ dễ nhớ nhưng khó đoán, ví dụ ghép nhiều từ không liên quan kèm số/ký tự đặc biệt.</div>
+
+        <h2 id="xac-thuc-hai-yeu-to">Xác thực hai yếu tố (2FA)</h2>
+        <p><strong>Vấn đề:</strong> chỉ dùng mật khẩu là chưa đủ an toàn nếu mật khẩu bị lộ.</p>
+        <p><strong>Cách xử lý:</strong> bật xác thực hai yếu tố (2FA) ở phần cài đặt bảo mật của tài khoản — hệ thống sẽ yêu cầu thêm mã xác nhận (qua ứng dụng hoặc SMS) mỗi khi đăng nhập từ thiết bị lạ.</p>
+        <p><strong>Lưu ý:</strong> lưu lại mã dự phòng (backup code) ở nơi an toàn, phòng khi mất quyền truy cập thiết bị xác thực.</p>
+
+        <h2 id="nhan-biet-phishing">Nhận biết phishing và email giả mạo</h2>
+        <p><strong>Vấn đề:</strong> email/tin nhắn giả mạo nhằm đánh cắp tài khoản, mật khẩu.</p>
+        <p><strong>Cách nhận biết:</strong></p>
+        <ul>
+          <li>Địa chỉ email gửi không khớp với tên miền chính thức</li>
+          <li>Yêu cầu bấm link lạ, nhập mật khẩu hoặc thông tin cá nhân gấp gáp</li>
+          <li>Nội dung tạo cảm giác khẩn cấp, đe dọa khóa tài khoản nếu không hành động ngay</li>
+        </ul>
+        <p><strong>Cách xử lý:</strong> không bấm vào link lạ, không nhập mật khẩu trên trang không rõ nguồn gốc, báo lại cho bộ phận hỗ trợ CNTT nếu nghi ngờ.</p>
+
+        <h2 id="sao-luu-du-lieu">Sao lưu dữ liệu và quản lý file</h2>
+        <p><strong>Vấn đề:</strong> mất dữ liệu học tập do hỏng máy, mất thiết bị hoặc xóa nhầm.</p>
+        <p><strong>Cách xử lý:</strong></p>
+        <ul>
+          <li>Lưu trữ tài liệu quan trọng trên Google Drive hoặc dịch vụ lưu trữ đám mây tương tự</li>
+          <li>Đặt tên file, sắp xếp thư mục theo môn học/học kỳ để dễ tìm lại</li>
+          <li>Sao lưu định kỳ, không chỉ lưu một bản duy nhất trên máy cá nhân</li>
+        </ul>
+
+        <h2>Câu hỏi thường gặp</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Làm sao bảo vệ tài khoản sinh viên?</summary>
+            <p>Dùng mật khẩu mạnh, bật xác thực hai yếu tố nếu hệ thống hỗ trợ, và cảnh giác với email/link lạ.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Làm sao sao lưu tài liệu học tập?</summary>
+            <p>Lưu trữ trên dịch vụ đám mây như Google Drive, sắp xếp theo thư mục rõ ràng và sao lưu định kỳ.</p>
+          </details>
+        </div>
+
+        <h2>Bài viết liên quan</h2>
+        <div class="related-grid">
+          <a class="related-card" href="/pages/ai.html#khong-nen-dung"><span>Công cụ AI</span>AI không nên được sử dụng như thế nào?</a>
+          <a class="related-card" href="/pages/lms.html#dang-nhap"><span>LMS</span>Cách đăng nhập LMS TLU</a>
+        </div>
+
+        <h2>Nguồn tham khảo</h2>
+        <ul class="source-list">
+          <li><span class="source-name">Google – Avoid &amp; report phishing emails</span><a href="https://support.google.com/mail/answer/8253">https://support.google.com/mail/answer/8253</a></li>
+          <li><span class="source-name">Google Drive – Trung tâm trợ giúp</span><a href="https://support.google.com/drive">https://support.google.com/drive</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text"><strong>TLU Tech Guide</strong></span>
+        <p>Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liên kết footer">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html">Học tập số</a></li>
+          <li><a href="/pages/ai.html">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+          <li><a href="/pages/sources.html">Nguồn tham khảo</a></li>
+        </ul>
+      </nav>
+      <div class="footer-disclaimer">
+        <p><strong>TLU Tech Guide là website dự án học tập</strong>, không phải website chính thức của Trường Đại học Thủy lợi.</p>
+        <p>Website phục vụ mục đích học tập và minh họa cho bài tập môn học.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công cụ AI cho sinh viên: ChatGPT, Gemini, Perplexity và cách viết prompt | TLU Tech Guide</title>
+  <meta name="description" content="Sinh viên TLU nên và không nên dùng AI như thế nào trong học tập, cách viết prompt tốt và kiểm tra lại thông tin AI cung cấp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Công cụ AI cho sinh viên: ChatGPT, Gemini, Perplexity và cách viết prompt",
+        "description": "Sinh viên TLU nên và không nên dùng AI như thế nào trong học tập, cách viết prompt tốt và kiểm tra lại thông tin AI cung cấp.",
+        "inLanguage": "vi",
+        "url": "https://tlu-tech-guide.example/pages/ai.html",
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "author": { "@type": "Organization", "name": "Ban biên tập TLU Tech Guide" },
+        "publisher": { "@type": "Organization", "name": "TLU Tech Guide" },
+        "mainEntityOfPage": "https://tlu-tech-guide.example/pages/ai.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://tlu-tech-guide.example/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Công cụ AI", "item": "https://tlu-tech-guide.example/pages/ai.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Có nên dùng AI để làm bài tập không?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Có thể dùng AI để hỗ trợ hiểu bài, tra cứu hoặc gợi ý dàn ý, nhưng không nên để AI làm thay toàn bộ bài tập rồi nộp như sản phẩm tự làm." }
+          },
+          {
+            "@type": "Question",
+            "name": "Làm thế nào để kiểm tra thông tin AI cung cấp?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Đối chiếu với tài liệu môn học, nguồn chính thức hoặc hỏi lại giảng viên với các thông tin quan trọng, số liệu, trích dẫn." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="#1D5FD6"/>
+            <path d="M8 20 L16 10 L24 20" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="23" r="1.6" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>TLU Tech Guide</strong>
+          <small>Cẩm nang Công nghệ &amp; Kỹ năng số</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Menu chính">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html">Học tập số</a></li>
+          <li><a href="/pages/ai.html" aria-current="page">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="/pages/services.html">Dịch vụ số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Mở tìm kiếm" aria-expanded="false" aria-controls="searchPanel">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel" hidden>
+      <label for="panelSearchInput" class="sr-only">Tìm kiếm hướng dẫn</label>
+      <input type="search" id="panelSearchInput" placeholder="Tìm hướng dẫn... ví dụ: prompt">
+      <div class="search-results" id="panelSearchResults" hidden></div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="container breadcrumb-bar">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/index.html">Trang chủ</a><span>/</span>
+        <span aria-current="page">Công cụ AI</span>
+      </nav>
+    </div>
+
+    <article class="article">
+      <div class="container container-narrow">
+        <p class="article-category">Công cụ AI</p>
+        <h1>Công cụ AI cho sinh viên: ChatGPT, Gemini, Perplexity và cách viết prompt</h1>
+        <p class="article-meta">Cập nhật: 24/09/2026 · Người phụ trách nội dung: Ban biên tập TLU Tech Guide</p>
+
+        <div class="callout quick-answer">
+          <strong>Trả lời nhanh:</strong> AI như ChatGPT, Gemini, Perplexity có thể hỗ trợ sinh viên giải thích bài học, tra cứu và kiểm tra code, nhưng không nên dùng để làm thay hoàn toàn bài tập, và luôn cần kiểm tra lại thông tin quan trọng.
+        </div>
+
+        <h2 id="ai-giup-gi">AI có thể giúp sinh viên làm gì?</h2>
+        <ul>
+          <li>Giải thích lại khái niệm khó hiểu theo cách đơn giản hơn</li>
+          <li>Gợi ý dàn ý, cấu trúc cho bài luận, báo cáo</li>
+          <li>Kiểm tra lỗi chính tả, ngữ pháp trong bài viết</li>
+          <li>Giải thích lỗi trong đoạn code và gợi ý hướng sửa</li>
+          <li>Hỗ trợ lập kế hoạch học tập, ôn thi theo mốc thời gian</li>
+        </ul>
+
+        <h2 id="khong-nen-dung">AI không nên được sử dụng như thế nào?</h2>
+        <ul>
+          <li>Không dùng AI viết toàn bộ bài tập rồi nộp như bài tự làm</li>
+          <li>Không tin tuyệt đối mọi câu trả lời của AI mà không kiểm chứng</li>
+          <li>Không dùng AI trong các bài kiểm tra, thi cử nếu không được cho phép</li>
+        </ul>
+        <div class="callout warn">⚠ Lưu ý: AI không phải lúc nào cũng đúng. Với số liệu, trích dẫn, quy định quan trọng, hãy đối chiếu với nguồn chính thức trước khi sử dụng.</div>
+
+        <h2 id="viet-prompt">Cách viết prompt tốt</h2>
+        <ol class="steps-list">
+          <li>Nêu rõ bối cảnh: bạn đang học môn gì, cần AI hỗ trợ việc gì.</li>
+          <li>Mô tả cụ thể yêu cầu đầu ra (giải thích ngắn gọn, liệt kê gạch đầu dòng, ví dụ minh họa...).</li>
+          <li>Nếu câu trả lời chưa đúng ý, phản hồi lại để AI điều chỉnh thay vì bắt đầu lại từ đầu.</li>
+        </ol>
+
+        <h2 id="giai-thich-bai-hoc">Cách yêu cầu AI giải thích bài học</h2>
+        <p>Ví dụ: "Giải thích khái niệm [tên khái niệm] bằng ví dụ thực tế, dành cho sinh viên năm nhất." Yêu cầu càng cụ thể, câu trả lời càng sát nhu cầu.</p>
+
+        <h2 id="kiem-tra-code">Cách yêu cầu AI kiểm tra code</h2>
+        <p>Dán đoạn code kèm mô tả lỗi gặp phải hoặc kết quả mong muốn, ví dụ: "Đoạn code này báo lỗi X, hãy giải thích nguyên nhân và gợi ý cách sửa." Nên tự hiểu bản sửa lỗi trước khi áp dụng, không copy máy móc.</p>
+
+        <h2 id="ke-hoach-hoc-tap">Cách sử dụng AI để lập kế hoạch học tập</h2>
+        <p>Cung cấp cho AI: các môn học, deadline, quỹ thời gian rảnh trong tuần, sau đó yêu cầu AI gợi ý lịch ôn tập theo tuần. Vẫn nên tự điều chỉnh lịch cho phù hợp thực tế cá nhân.</p>
+
+        <h2>Câu hỏi thường gặp</h2>
+        <div class="faq-list">
+          <details class="faq-item" id="faq-dung-ai-lam-bai-tap">
+            <summary>Có nên dùng AI để làm bài tập không?</summary>
+            <p>Có thể dùng AI để hỗ trợ hiểu bài, tra cứu hoặc gợi ý dàn ý, nhưng không nên để AI làm thay toàn bộ bài tập rồi nộp như sản phẩm tự làm.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Làm thế nào để kiểm tra thông tin AI cung cấp?</summary>
+            <p>Đối chiếu với tài liệu môn học, nguồn chính thức hoặc hỏi lại giảng viên với các thông tin quan trọng, số liệu, trích dẫn.</p>
+          </details>
+        </div>
+
+        <h2>Bài viết liên quan</h2>
+        <div class="related-grid">
+          <a class="related-card" href="/pages/digital-skills.html#nhan-biet-phishing"><span>Kỹ năng số</span>Cách nhận biết email phishing</a>
+          <a class="related-card" href="/pages/word.html#muc-luc-tu-dong"><span>Word</span>Cách tạo mục lục tự động</a>
+        </div>
+
+        <h2>Nguồn tham khảo</h2>
+        <ul class="source-list">
+          <li><span class="source-name">OpenAI Help Center (ChatGPT)</span><a href="https://help.openai.com/en/">https://help.openai.com/en/</a></li>
+          <li><span class="source-name">Google – Trung tâm trợ giúp Gemini</span><a href="https://support.google.com/gemini">https://support.google.com/gemini</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text"><strong>TLU Tech Guide</strong></span>
+        <p>Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liên kết footer">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html">Học tập số</a></li>
+          <li><a href="/pages/ai.html">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+          <li><a href="/pages/sources.html">Nguồn tham khảo</a></li>
+        </ul>
+      </nav>
+      <div class="footer-disclaimer">
+        <p><strong>TLU Tech Guide là website dự án học tập</strong>, không phải website chính thức của Trường Đại học Thủy lợi.</p>
+        <p>Website phục vụ mục đích học tập và minh họa cho bài tập môn học.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>

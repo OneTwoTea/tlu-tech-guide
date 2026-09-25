@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TLU Tech Guide – Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi</title>
+  <meta name="description" content="TLU Tech Guide cung cấp hướng dẫn dễ hiểu về LMS, Word, Excel, PowerPoint, công cụ AI và kỹ năng số dành cho sinh viên Đại học Thủy lợi.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tlu-tech-guide.example/index.html">
+  <meta property="og:title" content="TLU Tech Guide – Cẩm nang Công nghệ và Kỹ năng số cho sinh viên TLU">
+  <meta property="og:description" content="Hướng dẫn dễ hiểu về LMS, Word, Excel, PowerPoint, công cụ AI và kỹ năng số dành cho sinh viên Đại học Thủy lợi.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tlu-tech-guide.example/index.html">
+  <meta property="og:image" content="https://tlu-tech-guide.example/images/og-image.png">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org: WebSite + Organization (theo mục XVI đặc tả GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tlu-tech-guide.example/#website",
+        "url": "https://tlu-tech-guide.example/index.html",
+        "name": "TLU Tech Guide",
+        "alternateName": "Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi",
+        "description": "TLU Tech Guide cung cấp các hướng dẫn dễ hiểu về LMS, công cụ học tập, AI, kỹ năng số và các vấn đề công nghệ thường gặp của sinh viên Đại học Thủy lợi.",
+        "inLanguage": "vi",
+        "publisher": { "@id": "https://tlu-tech-guide.example/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://tlu-tech-guide.example/#organization",
+        "name": "TLU Tech Guide",
+        "url": "https://tlu-tech-guide.example/index.html",
+        "description": "TLU Tech Guide là website dự án học tập, không phải website chính thức của Trường Đại học Thủy lợi."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="#1D5FD6"/>
+            <path d="M8 20 L16 10 L24 20" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="23" r="1.6" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>TLU Tech Guide</strong>
+          <small>Cẩm nang Công nghệ &amp; Kỹ năng số</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Menu chính">
+        <ul>
+          <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+          <li><a href="pages/lms.html">Học tập số</a></li>
+          <li><a href="pages/ai.html">Công cụ AI</a></li>
+          <li><a href="pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="pages/services.html">Dịch vụ số</a></li>
+          <li><a href="pages/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Mở tìm kiếm" aria-expanded="false" aria-controls="heroSearch">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Dành cho sinh viên Đại học Thủy lợi</p>
+          <h1>Cẩm nang Công nghệ và Kỹ năng số cho sinh viên TLU</h1>
+          <p class="hero-desc">
+            TLU Tech Guide cung cấp các hướng dẫn dễ hiểu về LMS, công cụ học tập,
+            AI, kỹ năng số và các vấn đề công nghệ thường gặp của sinh viên Đại học Thủy lợi.
+          </p>
+          <div class="hero-cta">
+            <a href="#categories" class="btn btn-primary">Khám phá hướng dẫn</a>
+            <a href="#heroSearch" class="btn btn-ghost" id="heroSearchLink">Tìm kiếm nội dung</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card hero-card--lms">
+            <span class="hero-card-label">LMS</span>
+            <span class="hero-card-title">Nộp bài đúng hạn</span>
+          </div>
+          <div class="hero-card hero-card--ai">
+            <span class="hero-card-label">AI</span>
+            <span class="hero-card-title">Prompt hiệu quả</span>
+          </div>
+          <div class="hero-card hero-card--sec">
+            <span class="hero-card-label">Bảo mật</span>
+            <span class="hero-card-title">Tài khoản an toàn</span>
+          </div>
+          <div class="hero-grid-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEARCH BOX ============ -->
+    <section class="search-section" id="heroSearch" aria-labelledby="searchTitle">
+      <div class="container">
+        <div class="search-box">
+          <h2 id="searchTitle">Bạn đang cần tìm hướng dẫn gì?</h2>
+          <form class="search-form" id="searchForm" role="search">
+            <label for="searchInput" class="sr-only">Tìm kiếm hướng dẫn</label>
+            <input
+              type="search"
+              id="searchInput"
+              name="q"
+              placeholder="Ví dụ: Cách nộp bài trên LMS..."
+              autocomplete="off">
+            <button type="submit" class="btn btn-primary">
+              Tìm kiếm
+            </button>
+          </form>
+          <div class="search-results" id="searchResults" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DANH MỤC CHÍNH ============ -->
+    <section class="section" id="categories" aria-labelledby="categoriesTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="categoriesTitle">Danh mục hướng dẫn</h2>
+          <p>Bốn nhóm nội dung chính giúp bạn học tập và sử dụng công nghệ hiệu quả hơn.</p>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="category-icon" style="--icon-bg:#EAF1FF; --icon-fg:#1D5FD6;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H12v16H5.5C4.7 20 4 19.3 4 18.5V5.5Z" stroke="currentColor" stroke-width="1.8"/><path d="M20 5.5c0-.8-.7-1.5-1.5-1.5H12v16h6.5c.8 0 1.5-.7 1.5-1.5V5.5Z" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <h3>Học tập số</h3>
+            <p>LMS TLU, Word, Excel, PowerPoint và Google Drive cho việc học hằng ngày.</p>
+            <ul class="category-list">
+              <li><a href="pages/lms.html">LMS TLU</a></li><li><a href="pages/word.html">Word</a></li><li><a href="pages/excel.html">Excel</a></li><li><a href="pages/powerpoint.html">PowerPoint</a></li><li><a href="pages/digital-skills.html#sao-luu-du-lieu">Google Drive</a></li>
+            </ul>
+            <a href="pages/lms.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="category-card">
+            <span class="category-icon" style="--icon-bg:#EAF1FF; --icon-fg:#1D5FD6;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3l1.8 4.4L18 9l-4.2 1.6L12 15l-1.8-4.4L6 9l4.2-1.6L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Công cụ AI</h3>
+            <p>Sử dụng ChatGPT, Gemini, Perplexity và viết prompt đúng cách.</p>
+            <ul class="category-list">
+              <li><a href="pages/ai.html#ai-giup-gi">ChatGPT</a></li><li><a href="pages/ai.html#ai-giup-gi">Gemini</a></li><li><a href="pages/ai.html#ai-giup-gi">Perplexity</a></li><li><a href="pages/ai.html#viet-prompt">Kỹ thuật Prompt</a></li>
+            </ul>
+            <a href="pages/ai.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="category-card">
+            <span class="category-icon" style="--icon-bg:#EAF1FF; --icon-fg:#1D5FD6;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.5 12l1.8 1.8L15 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Kỹ năng số</h3>
+            <p>Bảo mật tài khoản, nhận biết phishing và lưu trữ dữ liệu an toàn.</p>
+            <ul class="category-list">
+              <li><a href="pages/digital-skills.html#nhan-biet-phishing">Email</a></li><li><a href="pages/digital-skills.html#xac-thuc-hai-yeu-to">Bảo mật</a></li><li><a href="pages/digital-skills.html#nhan-biet-phishing">Phishing</a></li><li><a href="pages/digital-skills.html#mat-khau-manh">Mật khẩu</a></li><li><a href="pages/digital-skills.html#sao-luu-du-lieu">Lưu trữ dữ liệu</a></li>
+            </ul>
+            <a href="pages/digital-skills.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="category-card">
+            <span class="category-icon" style="--icon-bg:#EAF1FF; --icon-fg:#1D5FD6;" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><rect x="4" y="10" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.8"/></svg>
+            </span>
+            <h3>Dịch vụ số</h3>
+            <p>Các thủ tục và hệ thống trực tuyến dành cho sinh viên TLU.</p>
+            <ul class="category-list">
+              <li><a href="pages/services.html#dich-vu-sinh-vien">Dịch vụ sinh viên</a></li><li><a href="pages/services.html#thu-tuc-truc-tuyen">Thủ tục trực tuyến</a></li><li><a href="pages/services.html#he-thong-truc-tuyen">Hệ thống trực tuyến</a></li>
+            </ul>
+            <a href="pages/services.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HƯỚNG DẪN NỔI BẬT ============ -->
+    <section class="section section-alt" id="featured" aria-labelledby="featuredTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="featuredTitle">Hướng dẫn nổi bật</h2>
+          <p>Những bài viết sinh viên TLU tìm đọc nhiều nhất.</p>
+        </div>
+
+        <div class="guide-grid" id="guideGrid">
+          <!-- Cards được liệt kê tĩnh tại đây; đồng thời là dữ liệu để JS tìm kiếm -->
+          <article class="guide-card" data-category="Học tập số" data-title="LMS TLU là gì?" data-keywords="lms tlu hệ thống học tập trực tuyến" data-url="pages/lms.html">
+            <span class="guide-tag">Học tập số</span>
+            <h3><a href="pages/lms.html">LMS TLU là gì?</a></h3>
+            <p>Giải thích ngắn gọn về hệ thống quản lý học tập của Đại học Thủy lợi.</p>
+            <div class="guide-meta">
+              <span>3 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/lms.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="guide-card" data-category="Học tập số" data-title="Cách đăng nhập LMS TLU" data-keywords="lms đăng nhập tài khoản sinh viên" data-url="pages/lms.html">
+            <span class="guide-tag">Học tập số</span>
+            <h3><a href="pages/lms.html">Cách đăng nhập LMS TLU</a></h3>
+            <p>Các bước đăng nhập vào hệ thống LMS bằng tài khoản sinh viên.</p>
+            <div class="guide-meta">
+              <span>3 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/lms.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="guide-card" data-category="Học tập số" data-title="Cách nộp bài trên LMS" data-keywords="nộp bài lms bài tập upload" data-url="pages/lms.html">
+            <span class="guide-tag">Học tập số</span>
+            <h3><a href="pages/lms.html">Cách nộp bài trên LMS</a></h3>
+            <p>Hướng dẫn từng bước cách tải và gửi bài tập trên LMS.</p>
+            <div class="guide-meta">
+              <span>5 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/lms.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="guide-card" data-category="Word" data-title="Cách tạo mục lục tự động trong Word" data-keywords="word mục lục tự động table of contents" data-url="pages/word.html">
+            <span class="guide-tag">Word</span>
+            <h3><a href="pages/word.html">Cách tạo mục lục tự động trong Word</a></h3>
+            <p>Tạo mục lục tự cập nhật cho báo cáo, tiểu luận chỉ trong vài bước.</p>
+            <div class="guide-meta">
+              <span>4 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/word.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="guide-card" data-category="Công cụ AI" data-title="Cách sử dụng AI hỗ trợ học tập" data-keywords="ai chatgpt gemini học tập prompt" data-url="pages/ai.html">
+            <span class="guide-tag">Công cụ AI</span>
+            <h3><a href="pages/ai.html">Cách sử dụng AI hỗ trợ học tập</a></h3>
+            <p>Dùng AI đúng cách để hỗ trợ học tập mà không vi phạm liêm chính học thuật.</p>
+            <div class="guide-meta">
+              <span>6 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/ai.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+
+          <article class="guide-card" data-category="Kỹ năng số" data-title="Cách bảo vệ tài khoản sinh viên" data-keywords="bảo mật tài khoản mật khẩu phishing xác thực hai yếu tố" data-url="pages/digital-skills.html">
+            <span class="guide-tag">Kỹ năng số</span>
+            <h3><a href="pages/digital-skills.html">Cách bảo vệ tài khoản sinh viên</a></h3>
+            <p>Mật khẩu mạnh, xác thực hai yếu tố và cách nhận biết email giả mạo.</p>
+            <div class="guide-meta">
+              <span>5 phút đọc</span><span aria-hidden="true">•</span><span>Cập nhật: 24/09/2026</span>
+            </div>
+            <a href="pages/digital-skills.html" class="card-link">Xem hướng dẫn <span aria-hidden="true">›</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq" aria-labelledby="faqTitle">
+      <div class="container container-narrow">
+        <div class="section-head">
+          <h2 id="faqTitle">Câu hỏi thường gặp</h2>
+          <p>Những thắc mắc phổ biến nhất của sinh viên TLU.</p>
+        </div>
+
+        <div class="faq-list" id="faqList">
+          <details class="faq-item" data-keywords="lms tlu là gì">
+            <summary>LMS TLU là gì?</summary>
+            <p>LMS TLU là hệ thống quản lý học tập trực tuyến của Đại học Thủy lợi, nơi sinh viên xem tài liệu, làm bài tập và theo dõi môn học. <em>[CẦN XÁC MINH VỚI NGUỒN CHÍNH THỨC]</em></p>
+          </details>
+          <details class="faq-item" data-keywords="quên mật khẩu lms">
+            <summary>Quên mật khẩu LMS phải làm gì?</summary>
+            <p>Sử dụng chức năng khôi phục mật khẩu trên trang đăng nhập LMS, hoặc liên hệ đơn vị hỗ trợ CNTT của trường. <em>[CẦN XÁC MINH VỚI NGUỒN CHÍNH THỨC]</em></p>
+          </details>
+          <details class="faq-item" data-keywords="không thấy môn học lms">
+            <summary>Không thấy môn học trên LMS phải làm gì?</summary>
+            <p>Kiểm tra lại thời khóa biểu, tải lại trang, hoặc liên hệ giảng viên/phòng đào tạo nếu môn học vẫn chưa hiển thị.</p>
+          </details>
+          <details class="faq-item" data-keywords="cách nộp bài lms">
+            <summary>Cách nộp bài trên LMS?</summary>
+            <p>Vào đúng môn học, chọn bài tập cần nộp, tải file lên và xác nhận nộp bài trước thời hạn quy định.</p>
+          </details>
+          <details class="faq-item" data-keywords="sinh viên có nên sử dụng ai">
+            <summary>Sinh viên có nên sử dụng AI trong học tập?</summary>
+            <p>Có thể, nếu dùng để hỗ trợ hiểu bài và tra cứu. Không nên dùng AI để làm thay toàn bộ bài tập, và luôn kiểm tra lại thông tin AI cung cấp.</p>
+          </details>
+          <details class="faq-item" data-keywords="mục lục tự động word">
+            <summary>Cách tạo mục lục tự động trong Word?</summary>
+            <p>Đặt Heading cho các tiêu đề, sau đó vào thẻ References &gt; Table of Contents để chèn mục lục tự động.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NGUỒN THÔNG TIN CHÍNH THỨC ============ -->
+    <section class="section section-alt" id="official-sources" aria-labelledby="sourcesTitle">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="sourcesTitle">Nguồn thông tin chính thức</h2>
+          <p>TLU Tech Guide là nội dung hướng dẫn không chính thức. Với các quy định và hệ thống của trường, hãy đối chiếu với nguồn dưới đây.</p>
+        </div>
+
+        <ul class="source-list">
+          <li>
+            <span class="source-name">Cổng thông tin Đại học Thủy lợi</span>
+            <a href="https://tlu.edu.vn/">Đại học Thủy Lợi</a>
+          </li>
+          <li>
+            <span class="source-name">Hệ thống LMS chính thức của TLU</span>
+            <a href="https://lms.tlu.edu.vn/login/index.php">Hệ thống LMS</a>
+          </li>
+          <li>
+            <span class="source-name">Phòng Công tác sinh viên / hỗ trợ CNTT</span>
+            <a href="https://tlu.edu.vn/phong-cong-tac-chinh-tri-va-quan-ly-sinh-vien-42888/">Phòng Công tác sinh viên</a>
+          </li>
+        </ul>
+        <p class="source-note">Các đường dẫn trên là placeholder, sẽ được thay bằng URL chính thức sau khi xác minh.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">
+          <strong>TLU Tech Guide</strong>
+        </span>
+        <p>Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Liên kết footer">
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="pages/lms.html">Học tập số</a></li>
+          <li><a href="pages/ai.html">Công cụ AI</a></li>
+          <li><a href="pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="pages/faq.html">FAQ</a></li>
+          <li><a href="pages/sources.html">Nguồn tham khảo</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-disclaimer">
+        <p><strong>TLU Tech Guide là website dự án học tập</strong>, không phải website chính thức của Trường Đại học Thủy lợi.</p>
+        <p>Website phục vụ mục đích học tập và minh họa cho bài tập môn học.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

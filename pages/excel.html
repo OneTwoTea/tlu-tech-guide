@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hướng dẫn Excel cho sinh viên: hàm cơ bản, Pivot Table, biểu đồ | TLU Tech Guide</title>
+  <meta name="description" content="Bảng tổng hợp hàm Excel cơ bản (SUM, IF, VLOOKUP...), cách dùng Pivot Table và tạo biểu đồ cho sinh viên Đại học Thủy lợi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Hướng dẫn Excel cho sinh viên: hàm cơ bản, Pivot Table, biểu đồ",
+        "description": "Bảng tổng hợp hàm Excel cơ bản (SUM, IF, VLOOKUP...), cách dùng Pivot Table và tạo biểu đồ cho sinh viên Đại học Thủy lợi.",
+        "inLanguage": "vi",
+        "url": "https://tlu-tech-guide.example/pages/excel.html",
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24",
+        "author": { "@type": "Organization", "name": "Ban biên tập TLU Tech Guide" },
+        "publisher": { "@type": "Organization", "name": "TLU Tech Guide" },
+        "mainEntityOfPage": "https://tlu-tech-guide.example/pages/excel.html"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "https://tlu-tech-guide.example/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Học tập số", "item": "https://tlu-tech-guide.example/index.html#categories" },
+          { "@type": "ListItem", "position": 3, "name": "Excel", "item": "https://tlu-tech-guide.example/pages/excel.html" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Nên dùng VLOOKUP hay XLOOKUP?",
+            "acceptedAnswer": { "@type": "Answer", "text": "XLOOKUP linh hoạt hơn (tìm được cả hai chiều), nhưng chỉ có ở các phiên bản Excel mới. Nếu máy dùng bản cũ, VLOOKUP vẫn là lựa chọn an toàn." }
+          },
+          {
+            "@type": "Question",
+            "name": "Vì sao công thức báo lỗi #N/A hoặc #DIV/0?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Thường do giá trị tra cứu không tồn tại hoặc chia cho 0. Có thể bọc công thức trong hàm IFERROR để xử lý gọn hơn." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="/index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="#1D5FD6"/>
+            <path d="M8 20 L16 10 L24 20" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="16" cy="23" r="1.6" fill="#fff"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>TLU Tech Guide</strong>
+          <small>Cẩm nang Công nghệ &amp; Kỹ năng số</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Menu chính">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html" aria-current="page">Học tập số</a></li>
+          <li><a href="/pages/ai.html">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="/pages/services.html">Dịch vụ số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchToggle" aria-label="Mở tìm kiếm" aria-expanded="false" aria-controls="searchPanel">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel" hidden>
+      <label for="panelSearchInput" class="sr-only">Tìm kiếm hướng dẫn</label>
+      <input type="search" id="panelSearchInput" placeholder="Tìm hướng dẫn... ví dụ: vlookup">
+      <div class="search-results" id="panelSearchResults" hidden></div>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <div class="container breadcrumb-bar">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/index.html">Trang chủ</a><span>/</span>
+        <a href="/index.html#categories">Học tập số</a><span>/</span>
+        <span aria-current="page">Excel</span>
+      </nav>
+    </div>
+
+    <article class="article">
+      <div class="container container-narrow">
+        <p class="article-category">Excel</p>
+        <h1>Hướng dẫn Excel cho sinh viên: hàm cơ bản, Pivot Table, biểu đồ</h1>
+        <p class="article-meta">Cập nhật: 24/09/2026 · Người phụ trách nội dung: Ban biên tập TLU Tech Guide</p>
+
+        <div class="callout quick-answer">
+          <strong>Trả lời nhanh:</strong> Sinh viên nên nắm các hàm SUM, AVERAGE, COUNT, IF, VLOOKUP/XLOOKUP để xử lý số liệu, cùng với Sort, Filter, Pivot Table và Chart để tổng hợp và trình bày dữ liệu.
+        </div>
+
+        <h2 id="ham-co-ban">Các hàm Excel cơ bản</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Tên hàm</th><th>Công dụng</th><th>Ví dụ</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>SUM</td><td>Tính tổng một dãy số</td><td><code>=SUM(A1:A10)</code></td></tr>
+              <tr><td>AVERAGE</td><td>Tính trung bình cộng</td><td><code>=AVERAGE(B1:B10)</code></td></tr>
+              <tr><td>COUNT</td><td>Đếm số ô chứa số</td><td><code>=COUNT(A1:A10)</code></td></tr>
+              <tr><td>IF</td><td>Kiểm tra điều kiện, trả về 1 trong 2 giá trị</td><td><code>=IF(A1&gt;=5,"Đạt","Chưa đạt")</code></td></tr>
+              <tr><td>COUNTIF</td><td>Đếm theo điều kiện</td><td><code>=COUNTIF(A1:A10,"Đạt")</code></td></tr>
+              <tr><td>SUMIF</td><td>Tính tổng theo điều kiện</td><td><code>=SUMIF(A1:A10,"&gt;5",B1:B10)</code></td></tr>
+              <tr><td>VLOOKUP / XLOOKUP</td><td>Tra cứu dữ liệu theo cột</td><td><code>=VLOOKUP(D1,A1:B10,2,0)</code></td></tr>
+              <tr><td>IFERROR</td><td>Xử lý khi công thức bị lỗi</td><td><code>=IFERROR(A1/B1,"Lỗi")</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="sap-xep-loc">Sort và Filter</h2>
+        <p>Chọn vùng dữ liệu, vào thẻ <strong>Data</strong> → <strong>Sort</strong> để sắp xếp tăng/giảm dần, hoặc <strong>Filter</strong> để lọc nhanh các dòng theo điều kiện mong muốn.</p>
+
+        <h2 id="pivot-table">Pivot Table</h2>
+        <ol class="steps-list">
+          <li>Chọn vùng dữ liệu cần tổng hợp.</li>
+          <li>Vào thẻ <strong>Insert</strong> → <strong>PivotTable</strong>.</li>
+          <li>Kéo thả các trường dữ liệu vào khu vực Rows, Columns, Values để tổng hợp theo nhu cầu.</li>
+        </ol>
+
+        <h2 id="bieu-do">Chart – Cách tạo biểu đồ</h2>
+        <ol class="steps-list">
+          <li>Chọn vùng dữ liệu (bao gồm cả tiêu đề cột).</li>
+          <li>Vào thẻ <strong>Insert</strong> → chọn loại biểu đồ phù hợp (cột, đường, tròn...).</li>
+          <li>Điều chỉnh tiêu đề biểu đồ và nhãn trục cho rõ ràng.</li>
+        </ol>
+
+        <h2>Câu hỏi thường gặp</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Nên dùng VLOOKUP hay XLOOKUP?</summary>
+            <p>XLOOKUP linh hoạt hơn (tìm được cả hai chiều), nhưng chỉ có ở các phiên bản Excel mới. Nếu máy dùng bản cũ, VLOOKUP vẫn là lựa chọn an toàn.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vì sao công thức báo lỗi #N/A hoặc #DIV/0?</summary>
+            <p>Thường do giá trị tra cứu không tồn tại hoặc chia cho 0. Có thể bọc công thức trong hàm IFERROR để xử lý gọn hơn.</p>
+          </details>
+        </div>
+
+        <h2>Bài viết liên quan</h2>
+        <div class="related-grid">
+          <a class="related-card" href="/pages/word.html#tao-bang"><span>Word</span>Cách tạo bảng trong Word</a>
+          <a class="related-card" href="/pages/ai.html#viet-prompt"><span>Công cụ AI</span>Cách viết prompt tốt</a>
+        </div>
+
+        <h2>Nguồn tham khảo</h2>
+        <ul class="source-list">
+          <li><span class="source-name">Microsoft Support – Excel</span><a href="https://support.microsoft.com/excel">https://support.microsoft.com/excel</a></li>
+        </ul>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text"><strong>TLU Tech Guide</strong></span>
+        <p>Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liên kết footer">
+        <ul>
+          <li><a href="/index.html">Trang chủ</a></li>
+          <li><a href="/pages/lms.html">Học tập số</a></li>
+          <li><a href="/pages/ai.html">Công cụ AI</a></li>
+          <li><a href="/pages/digital-skills.html">Kỹ năng số</a></li>
+          <li><a href="/pages/faq.html">FAQ</a></li>
+          <li><a href="/pages/sources.html">Nguồn tham khảo</a></li>
+        </ul>
+      </nav>
+      <div class="footer-disclaimer">
+        <p><strong>TLU Tech Guide là website dự án học tập</strong>, không phải website chính thức của Trường Đại học Thủy lợi.</p>
+        <p>Website phục vụ mục đích học tập và minh họa cho bài tập môn học.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/data.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
