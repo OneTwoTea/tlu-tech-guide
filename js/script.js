@@ -10,6 +10,21 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // GitHub Pages serves the site from /tlu-tech-guide/, while local previews use the root.
+  var siteBasePath = window.location.pathname.indexOf('/tlu-tech-guide/') === 0 ? '/tlu-tech-guide' : '';
+
+  function resolveInternalUrl(url) {
+    return url.indexOf('/') === 0 ? siteBasePath + url : url;
+  }
+
+  function normalizeInternalLinks() {
+    document.querySelectorAll('a[href^="/"]').forEach(function (link) {
+      link.setAttribute('href', resolveInternalUrl(link.getAttribute('href')));
+    });
+  }
+
+  normalizeInternalLinks();
+
   /* ------------------------------------------------------------------
      1. HEADER: thêm bóng khi cuộn trang xuống
      ------------------------------------------------------------------ */
@@ -116,8 +131,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var listHtml = matches.slice(0, 8).map(function (item) {
+      var itemUrl = resolveInternalUrl(item.url);
       return (
-        '<li><a href="' + item.url + '">' +
+        '<li><a href="' + itemUrl + '">' +
         '<span>' + item.category + '</span>' +
         item.title +
         '</a></li>'
