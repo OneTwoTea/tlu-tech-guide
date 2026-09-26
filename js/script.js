@@ -17,14 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
     return url.indexOf('/') === 0 ? siteBasePath + url : url;
   }
 
-  function normalizeInternalLinks() {
-    document.querySelectorAll('a[href^="/"]').forEach(function (link) {
-      link.setAttribute('href', resolveInternalUrl(link.getAttribute('href')));
-    });
-  }
-
-  normalizeInternalLinks();
-
   /* ------------------------------------------------------------------
      1. HEADER: thêm bóng khi cuộn trang xuống
      ------------------------------------------------------------------ */
