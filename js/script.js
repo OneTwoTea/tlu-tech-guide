@@ -200,7 +200,110 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ------------------------------------------------------------------
-     4. FAQ ACCORDION: mỗi lần chỉ mở 1 câu hỏi
+     4. GIỎ HÀNG TÀI LIỆU
+     Lưu tạm trong localStorage để giỏ hàng không mất khi chuyển trang.
+     ------------------------------------------------------------------ */
+  var cartToggle = document.getElementById('cartToggle');
+  var cartDrawer = document.getElementById('cartDrawer');
+  var cartBackdrop = document.getElementById('cartBackdrop');
+
+  if (cartToggle && cartDrawer) {
+    var cartItems = document.getElementById('cartItems');
+    var cartEmpty = document.getElementById('cartEmpty');
+    var cartFooter = document.getElementById('cartFooter');
+    var cartCount = document.getElementById('cartCount');
+    var cartTotal = document.getElementById('cartTotal');
+    var storedCart;
+
+    try {
+      storedCart = JSON.parse(localStorage.getItem('tlu-study-cart') || '[]');
+    } catch (error) {
+      storedCart = [];
+    }
+    var cart = Array.isArray(storedCart) ? storedCart : [];
+
+    function formatPrice(price) {
+      return new Intl.NumberFormat('vi-VN').format(price) + 'đ';
+    }
+
+    function saveCart() {
+      localStorage.setItem('tlu-study-cart', JSON.stringify(cart));
+    }
+
+    function renderCart() {
+      var totalItems = cart.reduce(function (sum, item) { return sum + item.quantity; }, 0);
+      var totalPrice = cart.reduce(function (sum, item) { return sum + item.price * item.quantity; }, 0);
+      cartCount.textContent = totalItems;
+      cartEmpty.hidden = cart.length !== 0;
+      cartFooter.hidden = cart.length === 0;
+      cartItems.innerHTML = cart.map(function (item) {
+        return '<div class="cart-line" data-cart-id="' + item.id + '">' +
+          '<div><h3>' + item.name + '</h3><span class="cart-line-price">' + formatPrice(item.price) + '</span>' +
+          '<div class="cart-line-controls"><button class="qty-btn" data-cart-action="decrease" aria-label="Giảm số lượng">−</button><span>' + item.quantity + '</span><button class="qty-btn" data-cart-action="increase" aria-label="Tăng số lượng">＋</button><button class="remove-item" data-cart-action="remove">Xóa</button></div></div>' +
+          '<strong>' + formatPrice(item.price * item.quantity) + '</strong></div>';
+      }).join('');
+      cartTotal.textContent = formatPrice(totalPrice);
+      saveCart();
+    }
+
+    function setCartOpen(isOpen) {
+      cartDrawer.classList.toggle('is-open', isOpen);
+      cartDrawer.setAttribute('aria-hidden', String(!isOpen));
+      cartToggle.setAttribute('aria-expanded', String(isOpen));
+      cartBackdrop.hidden = !isOpen;
+      document.body.classList.toggle('cart-is-open', isOpen);
+    }
+
+    function addToCart(card) {
+      var id = card.dataset.productId;
+      var existing = cart.find(function (item) { return item.id === id; });
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ id: id, name: card.dataset.productName, price: Number(card.dataset.productPrice), quantity: 1 });
+      }
+      renderCart();
+      setCartOpen(true);
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(function (button) {
+      button.addEventListener('click', function () {
+        addToCart(button.closest('.product-card'));
+        button.classList.add('is-added');
+        button.textContent = 'Đã thêm';
+        setTimeout(function () { button.classList.remove('is-added'); button.textContent = 'Thêm vào giỏ'; }, 1200);
+      });
+    });
+
+    cartItems.addEventListener('click', function (event) {
+      var actionButton = event.target.closest('[data-cart-action]');
+      if (!actionButton) return;
+      var line = actionButton.closest('[data-cart-id]');
+      var item = cart.find(function (cartItem) { return cartItem.id === line.dataset.cartId; });
+      if (!item) return;
+      if (actionButton.dataset.cartAction === 'increase') item.quantity += 1;
+      if (actionButton.dataset.cartAction === 'decrease') item.quantity -= 1;
+      if (actionButton.dataset.cartAction === 'remove' || item.quantity < 1) cart = cart.filter(function (cartItem) { return cartItem.id !== item.id; });
+      renderCart();
+    });
+
+    cartToggle.addEventListener('click', function () { setCartOpen(!cartDrawer.classList.contains('is-open')); });
+    document.getElementById('cartClose').addEventListener('click', function () { setCartOpen(false); });
+    cartBackdrop.addEventListener('click', function () { setCartOpen(false); });
+    document.addEventListener('keydown', function (event) { if (event.key === 'Escape') setCartOpen(false); });
+    document.getElementById('checkoutBtn').addEventListener('click', function () {
+      var name = window.prompt('Nhập tên của bạn để nhận link tài liệu:');
+      if (!name) return;
+      var email = window.prompt('Nhập email nhận tài liệu:');
+      if (!email) return;
+      window.alert('Cảm ơn ' + name + '! Đơn hàng đã được ghi nhận. Link tải sẽ được gửi tới ' + email + ' sau khi thanh toán.');
+    });
+    renderCart();
+  }
+
+
+  /* ------------------------------------------------------------------
+     5. FAQ ACCORDION: mỗi lần chỉ mở 1 câu hỏi
      ------------------------------------------------------------------ */
   var faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(function (item) {

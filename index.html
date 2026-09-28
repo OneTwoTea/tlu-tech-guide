@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TLU Tech Guide – Cẩm nang Công nghệ và Kỹ năng số cho sinh viên Đại học Thủy lợi</title>
-  <meta name="description" content="TLU Tech Guide cung cấp hướng dẫn dễ hiểu về LMS, Word, Excel, PowerPoint, công cụ AI và kỹ năng số dành cho sinh viên Đại học Thủy lợi.">
+  <title>TLU Study Store – Tài liệu học tập cho sinh viên TLU</title>
+  <meta name="description" content="TLU Study Store cung cấp tài liệu học tập, cẩm nang kỹ năng số và bộ đề thực hành dành cho sinh viên Đại học Thủy lợi.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://onetwotea.github.io/tlu-tech-guide/index.html">
   <meta property="og:title" content="TLU Tech Guide – Cẩm nang Công nghệ và Kỹ năng số cho sinh viên TLU">
@@ -66,6 +66,7 @@
       <nav class="main-nav" id="mainNav" aria-label="Menu chính">
         <ul>
           <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+          <li><a href="#store">Tài liệu</a></li>
           <li><a href="pages/lms.html">Học tập số</a></li>
           <li><a href="pages/ai.html">Công cụ AI</a></li>
           <li><a href="pages/digital-skills.html">Kỹ năng số</a></li>
@@ -77,6 +78,10 @@
       <div class="header-actions">
         <button class="icon-btn" id="searchToggle" aria-label="Mở tìm kiếm" aria-expanded="false" aria-controls="heroSearch">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <button class="cart-btn" id="cartToggle" aria-label="Mở giỏ hàng" aria-expanded="false" aria-controls="cartDrawer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M4 5h2l1.5 10h10L20 8H7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.3" fill="currentColor"/><circle cx="17" cy="19" r="1.3" fill="currentColor"/></svg>
+          <span>Giỏ hàng</span><strong id="cartCount">0</strong>
         </button>
         <button class="hamburger" id="hamburgerBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mainNav">
           <span></span><span></span><span></span>
@@ -98,7 +103,7 @@
             AI, kỹ năng số và các vấn đề công nghệ thường gặp của sinh viên Đại học Thủy lợi.
           </p>
           <div class="hero-cta">
-            <a href="#categories" class="btn btn-primary">Khám phá hướng dẫn</a>
+            <a href="#store" class="btn btn-primary">Xem tài liệu học tập</a>
             <a href="#heroSearch" class="btn btn-ghost" id="heroSearchLink">Tìm kiếm nội dung</a>
           </div>
         </div>
@@ -117,6 +122,55 @@
             <span class="hero-card-title">Tài khoản an toàn</span>
           </div>
           <div class="hero-grid-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CỬA HÀNG TÀI LIỆU ============ -->
+    <section class="section store-section" id="store" aria-labelledby="storeTitle">
+      <div class="container">
+        <div class="store-intro">
+          <div class="section-head">
+            <span class="eyebrow">TLU Study Store</span>
+            <h2 id="storeTitle">Tài liệu học tập, chọn là có</h2>
+            <p>Bộ tài liệu được biên soạn ngắn gọn, thực tế, giúp bạn ôn tập nhanh hơn và làm bài tự tin hơn.</p>
+          </div>
+          <div class="store-benefits" aria-label="Lợi ích khi mua tài liệu">
+            <span><b>01</b> File tải ngay</span>
+            <span><b>02</b> Cập nhật theo học kỳ</span>
+            <span><b>03</b> Hỗ trợ qua email</span>
+          </div>
+        </div>
+
+        <div class="product-toolbar">
+          <div><strong>Gợi ý cho bạn</strong><span> 6 tài liệu nổi bật</span></div>
+          <a href="#store" class="store-filter">Xem tất cả <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-product-id="lms-starter" data-product-name="Bộ tài liệu LMS TLU từ A-Z" data-product-price="49000">
+            <div class="product-cover cover-blue"><span>LMS</span><b>A-Z</b><small>HỌC TẬP SỐ</small></div>
+            <div class="product-body"><span class="product-category">Bán chạy</span><h3>Bộ tài liệu LMS TLU từ A-Z</h3><p>Đăng nhập, tìm môn, nộp bài và xử lý các lỗi thường gặp.</p><div class="product-bottom"><strong>49.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
+          <article class="product-card" data-product-id="word-report" data-product-name="Word thực chiến: Báo cáo & tiểu luận" data-product-price="59000">
+            <div class="product-cover cover-coral"><span>WORD</span><b>01</b><small>THỰC CHIẾN</small></div>
+            <div class="product-body"><span class="product-category">Báo cáo</span><h3>Word thực chiến: Báo cáo &amp; tiểu luận</h3><p>Mẫu định dạng, mục lục, đánh số trang và xuất PDF chuẩn.</p><div class="product-bottom"><strong>59.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
+          <article class="product-card" data-product-id="excel-data" data-product-name="Excel cho sinh viên: Từ cơ bản đến biểu đồ" data-product-price="69000">
+            <div class="product-cover cover-green"><span>EXCEL</span><b>Σ</b><small>THỰC HÀNH</small></div>
+            <div class="product-body"><span class="product-category">Thực hành</span><h3>Excel cho sinh viên: Từ cơ bản đến biểu đồ</h3><p>Hàm thông dụng, xử lý bảng điểm và bài tập dữ liệu mẫu.</p><div class="product-bottom"><strong>69.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
+          <article class="product-card" data-product-id="ai-study" data-product-name="AI hỗ trợ học tập & viết prompt" data-product-price="39000">
+            <div class="product-cover cover-yellow"><span>AI</span><b>+</b><small>HỌC THÔNG MINH</small></div>
+            <div class="product-body"><span class="product-category">Mới</span><h3>AI hỗ trợ học tập &amp; viết prompt</h3><p>20 prompt mẫu và nguyên tắc dùng AI có trách nhiệm trong học tập.</p><div class="product-bottom"><strong>39.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
+          <article class="product-card" data-product-id="presentation" data-product-name="Thiết kế slide thuyết trình ghi điểm" data-product-price="49000">
+            <div class="product-cover cover-purple"><span>SLIDE</span><b>10</b><small>THUYẾT TRÌNH</small></div>
+            <div class="product-body"><span class="product-category">Kỹ năng</span><h3>Thiết kế slide thuyết trình ghi điểm</h3><p>Công thức bố cục, màu sắc và checklist trước khi lên thuyết trình.</p><div class="product-bottom"><strong>49.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
+          <article class="product-card" data-product-id="semester-pack" data-product-name="Combo học kỳ: 5 bộ tài liệu TLU" data-product-price="199000">
+            <div class="product-cover cover-navy"><span>TLU</span><b>5X</b><small>COMBO TIẾT KIỆM</small></div>
+            <div class="product-body"><span class="product-category">Tiết kiệm 20%</span><h3>Combo học kỳ: 5 bộ tài liệu TLU</h3><p>Trọn bộ LMS, Word, Excel, Slide và AI trong một gói tiện lợi.</p><div class="product-bottom"><strong>199.000đ</strong><button class="add-to-cart" type="button">Thêm vào giỏ</button></div></div>
+          </article>
         </div>
       </div>
     </section>
@@ -335,11 +389,19 @@
             <a href="https://tlu.edu.vn/phong-cong-tac-chinh-tri-va-quan-ly-sinh-vien-42888/">Phòng Công tác sinh viên</a>
           </li>
         </ul>
-        <p class="source-note">Các đường dẫn trên là nguồn chính thức để đối chiếu thông tin về trường và các dịch vụ dành cho sinh viên.</p>
       </div>
     </section>
 
   </main>
+
+  <!-- ============ GIỎ HÀNG ============ -->
+  <div class="cart-backdrop" id="cartBackdrop" hidden></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="cart-header"><div><span class="eyebrow">Đơn hàng của bạn</span><h2 id="cartTitle">Giỏ hàng</h2></div><button class="icon-btn" id="cartClose" aria-label="Đóng giỏ hàng">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-empty" id="cartEmpty"><span class="cart-empty-icon">＋</span><strong>Giỏ hàng đang trống</strong><p>Chọn tài liệu bạn cần, rồi quay lại đây để đặt mua.</p></div>
+    <div class="cart-footer" id="cartFooter" hidden><div class="cart-total"><span>Tạm tính</span><strong id="cartTotal">0đ</strong></div><button class="btn btn-primary checkout-btn" id="checkoutBtn" type="button">Đặt mua tài liệu</button><small>Thanh toán và nhận link tải qua email sau khi xác nhận đơn.</small></div>
+  </aside>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
